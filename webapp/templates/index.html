@@ -1,0 +1,85 @@
+{% extends "base.html"%}
+{%load static%}
+{%load filters%}
+{%block tcss%}
+<title>PyForums | Home</title>
+<link type="text/css" rel="stylesheet" href={%static "styles/base.css"%}>
+{%endblock%}
+{%block fadd%}
+     <link href="https://fonts.googleapis.com/css?family=Lobster|Lato|Roboto:900|Arimo:700|Open+Sans:400|Montserrat:700" rel="stylesheet"> 
+     <meta name="keywords" content="PyForums,forums,Python"/>
+     <meta name="description" content="PyForums is a forum site for python beginners or profestionals sharing knowledge and improving knowldege about python"/>
+{%endblock%}     
+{%block header%} 
+     <p class="addheader" ><a class="ah" href={%url "indexnav"  "top" %}>Hot questions</a></p>  
+     <p class="addheader"><a class="ah" href={%url "indexnav" "new"%}>Latest questions</a></p>
+     <p class="addheader"><a class="ah" href={%url "askquestion"%}>Ask question</a></p>
+     <p class="addheader" id="hidehead" ><a class="ah" href={%url "all" "aboutus" %}>About</a></p>
+     <p class="addheader" id="hidehead" ><a class="ah"  href={%url "all" "contactus" %}>Contact</a></p>
+     <form  id="search"  action={% url "search" %} method="get">
+          {{search.searchinfo}}
+          <input id="submitsearch" type="image" src={%static "images/search.png"%} alt="submit"/>
+     </form>
+{%endblock%}
+{%block nav%}
+<div id="nav">
+     <p id="title">Hi welcome to Pyforums, online solution to all your python queries</p>
+</div>
+{%endblock%}
+{%block section%}
+<section> 
+  <div id="list">
+   <ul id="queslist"> 
+    {%for headers in list%}
+    <li class="lielement">
+		     <h3>
+           <a href={%url "seeques" headers.id headers.slug%}>{{headers.header|capfirst}}</a>
+         </h3> 
+    <div class="abox">
+      {%if headers.reply%}
+      <div class="circlet" style="background-color:springgreen;color:white;border:2px solid springgreen">{{headers.reply}} </div>
+      {%else%}
+		  <div class="circlet"> {{headers.reply}}</div> 
+      {%endif%}answers</div> 
+       <div class="vbox">
+      <div class="circlet">{{headers.views|viewscut}}</div>
+      views</div>
+      <p class="user">      
+         {%if headers.updated %}
+         Updated 
+         {{headers.dateqtime|timesince}} ago
+         {%else%}
+         Posted 
+         {{headers.dateqtime|timesince}} ago
+         {%endif%} by
+         <strong><a class="usera" href={%url "user" headers.user.id  headers.user.first_name %} >{{headers.user.first_name}} {{headers.user.last_name}}</a>
+         </strong>
+       </p>  		
+    </li>
+	  {%endfor%}
+	 </ul>
+   <p id="more">
+   <a class="hotlink" href={%url "indexnav"  "new"%}>More Questions</a>
+   </p>
+  </div>
+   <div id="hotq">
+     <h3 id="sidebar">MOST VIEWED QUESTIONS</h3>    
+     <ul>
+       {%for hots in hotlist%}
+         <li class="hothome"><a class="hotlink" href={%url "seeques" hots.id hots.slug%}>{{hots.header}}</a></li>
+        {%endfor%}
+      </ul>   
+   </div>
+  
+</section>
+{%endblock%}
+{%block login%}
+<a href={%url "login" "new"%} ><p id="loginhead">Login</p></a>
+{%endblock%}
+{%block signup%}
+<a href={%url "signup" "new"%}><p id="registerhead" >Signup</p></a>
+{%endblock%}
+{%block js%}
+  <script src={%static "javascript/main.js"%}></script>
+{%endblock%}
+

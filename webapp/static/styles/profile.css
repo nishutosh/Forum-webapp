@@ -1,0 +1,776 @@
+*{ 
+	margin:0px;
+	padding:0px;
+}
+
+#id_abody{
+    resize:none;
+	box-shadow: none;
+	outline:none;
+    width:74%;
+	margin-left: 28px;
+	padding: 10px;
+	border-radius: 3px;
+    font-size: 14px;
+    font-family: Verdana;
+	height: 241px;
+	border-style: none;
+
+}
+.click{
+
+	
+	padding: 3px 3%;
+	color: #b0b0b0;
+	font-size: 22px;
+	border-radius: 5px;
+	border: 1px solid #ababab;
+}
+#anshide{
+	display:none;
+
+
+}
+#pquestions{
+
+	
+	padding: 6%;
+	font-family: Open Sans,Verdana;
+	font-size: 20px;
+	color: #dedede;
+}
+#id_acode{
+    resize:none;
+    outline:none;
+	width:75%;
+	margin-left: 28px;
+	font-size: 14px;
+	padding: 5px 2px 5px 2px;
+	border-style: none;
+
+
+}
+#id_user_question{
+	outline:none;
+	width:665px;
+	height:35px;
+	margin-left: 30px;
+	padding: 10px;
+	font-size: 18px;
+	border-radius: 3px;
+	border-style: none;
+}
+#id_question_body{
+	resize:none;
+	box-shadow: none;
+	outline:none;
+    width:74%;
+	margin-left: 28px;
+	padding: 10px;
+	border-radius: 3px;
+    font-size: 14px;
+    font-family: Verdana;
+	height: 241px;
+	border-style: none;
+}
+#id_question_code{
+	resize:none;
+    outline:none;
+	width:75%;
+	margin-left: 28px;
+	font-size: 14px;
+	padding: 5px 2px 5px 2px;
+	border-style: none;
+}
+
+#headertag{
+	padding:20px 30px 10px 29px;
+
+	font-family: Verdana;
+	color: #a7a7a7;
+}
+
+#bodytag{
+	padding:10px 30px 10px 28px;
+	font-family: Verdana;
+	color: #a1a1a1;
+}
+#codetag{
+   padding:10px 30px 10px 27px;
+   font-family:Verdana;
+
+  
+   color: #aaa;
+}
+.errorlist{
+  color:tomato;
+  font-family:Open Sans,Verdana;
+  font-size:20px;
+  margin: 1%;
+}
+#edit{
+
+	
+	font-size: 20px;
+	color: #0b77d2;
+	font-family: Open Sans,Verdana;
+	float: left;
+	margin: 2% 3%;
+}
+#boxadd{
+
+	
+	width: 92%;
+	margin: 1% 3%;
+	height: 127px;
+	border: 2px dashed #adadad;
+	border-radius: 10px;
+	font-family: Open Sans,Verdana;
+	font-size: 22px;
+	text-align: center;
+	padding-top: 5%;
+}
+
+.messages{
+   background-color: #d4d4d4;
+   text-align: center;
+   color:#363636;
+   font-family: Open Sans,Verdana;
+   display:none;
+   position: absolute;
+   width: 19%;
+   height: 42px;
+   padding: 3% 5% 7% 5%;
+   font-size: 21px;
+   border-radius: 6px;
+   top: 36%;
+   left: 35%;
+}
+.prohead{
+    font-size:16px;
+    font-family: 'Open Sans', sans-serif;
+    color:white;
+    cursor:pointer;
+    padding: 0% 10px;
+    background-color: black;
+    padding-bottom: 2%;
+}
+#menubox{
+	background-color: #2C2C2C;
+	position: absolute;
+	top: 3%;
+	left: 14%;
+}
+.mplist{
+
+	display: none;
+	color: white;
+	font-family: Open Sans,Verdana;
+	padding: 5% 9%;
+}
+#tmay:hover{
+	color:#0a8ffe;
+}
+.mplist:hover{
+
+	background-color: #1678cb;
+}
+.mplist1:hover{
+
+	background-color: #1678cb;
+}
+#menubox1{
+    position: absolute;
+	background-color: #2C2C2C;
+	left: 27%;
+	
+    top: 3%;
+}
+#drops{
+	display:inline-block;
+} 
+
+#pic{
+    
+ 
+	display:inline-block;
+	width:240px;
+	height:240px;
+	margin:63px 85px 121px 240px;
+    border-radius: 100%;
+}
+a{  outline: none;
+	/*color:white;*/
+}
+#name{
+ font-size: 44px;
+	font-family:Source Sans Pro,Verdana;
+ margin-bottom: 34px;
+ color: #cfcfcf;
+}
+
+header{
+
+	background-color:black;
+	height: 61px;
+	width: 100%;
+}
+#websitename{
+    font-family: 'Lobster', Verdana;
+	color:white;
+	font-size:34px;
+    padding: 6px;
+	padding-left: 37px;
+    height: 44px;
+}
+#username{
+	font-family:Open Sans,Verdana;
+	position:absolute;
+	top:3%;
+	right:2%;
+	font-size:17px;
+	color:white;
+
+}
+#warning{
+	margin:2% 1%;
+	font-size: 13px;
+	font-family: Verdana;
+	color: tomato;
+}
+#emailbox{
+  
+
+	padding: 4% 3%;
+}
+#deletepro{
+	font-family: Verdana;
+	font-size: 18px;
+}
+#passwordedit{
+
+
+	padding: 4% 3%;
+}
+#cps{
+	border-style: none;
+	background-color: steelblue;
+	padding: 1%;
+	width: 21%;
+	font-size: 19px;
+	margin: 0px 1%;
+	border-radius: 2px;
+	cursor: pointer;
+	color: white;
+}
+#questionh,#answerh{
+ 
+
+
+  margin: 2% 6%;
+}
+#id_profilepic{
+	visibility: hidden;
+}
+#subbutton{
+
+
+}
+#cps:hover{
+
+	background-color: #0766b6;
+}
+#changedel{
+
+	cursor: pointer;
+	background-color: tomato;
+	border-style: none;
+	color: white;
+	padding: 13px;
+}
+#changedel:hover{
+	background-color: #fb4343;
+}
+#id_user_password{
+
+	padding: 12px;
+	margin: auto;
+	font-family: Open Sans,Verdana;
+}
+#deleteprofile{
+	
+	margin: 12% auto;
+	text-align: center;
+}
+#aboutview{
+	margin:3%;
+}
+.nothing{
+	
+	font-size: 46px;
+	font-family: Open Sans,Verdana;
+	color: grey;
+}
+#profileup{
+
+
+
+ text-align: center;
+}
+
+#mainh{
+
+	font-family:Raleway,Verdana;
+	font-size: 31px;
+	margin-bottom: 3%;
+	color: #BCBCBC;
+}
+#username:hover{
+
+	color:#0981e6;
+}
+#loginhead:hover{
+
+	color:#047de1;
+}
+#id_edit_cpassword,#id_edit_npassword,#id_edit_conpassword{
+	padding: 1%;
+	font-size: 18px;
+	border: 1px solid #aaa;
+	color: #D1D1D1;
+    
+	display: block;
+	border-radius: 3px;
+	margin-bottom: 13px;
+	width: 19%;
+	margin-left: 1%;
+	background-color: #1a1a1a;
+}
+
+#id_more{
+
+
+	
+	width: 70%;
+	height: 177px;
+	border: none;
+	border: 1px solid #747474;
+	border-radius: 6px;
+	display: block;
+	font-family: Open Sans,Verdana;
+	font-size: 18px;
+	padding: 10px;
+	margin: 1%;
+	resize: none;
+	background-color: #1a1919;
+	color: #a4a4a4;
+}
+#avp{
+	
+	font-size: 20px;
+	font-family: Verdana;
+	margin: 3%;
+	color: grey;
+}
+#mainarea{
+
+	
+	width: 75%;
+	height: 450px;
+	float: right;
+	margin: 2% 2% 1% 0%;
+	border-radius: 10px;
+}
+#tmay{
+
+	
+	color: white;
+}
+
+.mplist1{
+
+	display: block;
+	color: white;
+	font-family: Open Sans,Verdana;
+	padding: 5% 17%;
+	display: none;
+}
+
+
+#usersubmittext{
+
+
+	
+	border-style: none;
+	background-color: #005195;
+	margin: 1%;
+	padding: 6px 29px;
+	font-size: 18px;
+	color: #e7e7e7;
+	cursor: pointer;
+}
+#mpro{
+
+	
+	font-family: Verdana;
+	font-size: 19px;
+	width: 18%;
+	float: left;
+	background-color: #181818;
+	color: white;
+	height: 400vh;
+	position: fixed;
+	margin-top: 61px;
+}
+
+#loginhead{ 
+	font-family:Open Sans,Verdana;
+	position:absolute;
+	top:3%;
+	right:7%;
+	font-size:17px;
+	color:white;
+	}
+#ask_tag{
+	background-color: white;
+	width: 201px;
+    border-radius:100%;
+	height: 194px;
+	margin: 23px auto 20px auto;
+}
+
+#profile{
+	padding: 77px 72px 0px 72px;
+	font-family: Open Sans,Verdana;
+	font-size: 19px;
+	
+	color: #636363;
+	line-height: 28px;
+	width: 45%;
+	float: right;
+}	
+#countques{
+position:relative;
+font-size: 59px;
+top: -21px;
+}
+#countans{
+position:relative;
+font-size: 59px;
+top:-21px;
+}
+#your_ques{
+    display:inline-block;
+	font-family: Open Sans,Verdana;
+	font-size: 26px;
+	margin: 61px auto;
+    width: 278px;
+    margin-bottom: 0px;
+}
+#your_answer{
+     display:inline-block;
+	font-family: Open Sans,Verdana;
+	margin: 30px auto;
+	font-size: 26px;
+	width: 278px;
+  
+}
+.pa{
+	color:white;
+}
+a{
+	text-decoration:none;
+}
+footer{
+	visibility: hidden;
+}
+li{
+	list-style-type:none;
+}
+li.foot{
+	list-style-type:none;
+	margin-left:115px;
+    display:inline-block;
+	}
+
+body{
+background-color: #1a1919;
+}
+#id_user_mail{
+	padding: 1%;
+	font-size: 18px;
+	border: 1px solid #aaa;
+	color: #D1D1D1;
+    
+	display: block;
+	border-radius: 3px;
+	margin-bottom: 14px;
+	width: 19%;
+	margin-left: 1%;
+	background-color: #1a1a1a;
+}	
+#user_qlist{
+	font-size: 17px;
+	font-family: Open Sans,Verdana;
+	margin: 0px;
+	color: #909090;
+}
+#head_ques{
+	font-family:Open Sans ,Verdana;
+	font-size: 29px;
+	margin-bottom: 1%;
+	color: #595959;
+}
+td{
+	padding:10px 0px 5px 26px;
+}
+#description{
+
+	font-family:Open Sans,Verdana;
+	font-size:18px;
+	padding: 0px 3%;
+	margin-top: 22px;
+	color: #d5d5d5;
+}
+
+
+
+#truc{
+color: #444;
+
+}
+#hide{
+	display:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:445px){
+#menubox1{
+	display: none;
+}
+#id_edit_cpassword,#id_edit_npassword,#id_edit_conpassword{
+
+ width:68%;
+
+
+ margin: 2% auto 0% auto;
+}
+
+#headertag{
+
+	font-size: 17px;
+}
+#id_user_question{
+	font-size: 15px;
+	width: 80%;
+	padding: 2%;
+	height: 10%;
+}
+#bodytag{
+
+	font-size:17px;
+
+}
+#id_question_body{
+    font-size: 15px;
+	width: 80%;
+	padding: 2%;
+
+
+}
+#codetag{
+	font-size:17px;
+}
+#id_question_code{
+    font-size: 15px;
+	width: 80%;
+	padding: 2%;
+
+}
+#id_acode{
+
+	
+	width: 79%;
+}
+
+#id_user_password{
+
+	
+	padding: 2%;
+	width: 53%;
+}
+#changedel{
+
+	
+	width: 58%;
+	margin: 3%;
+	padding: 3%;
+}
+#username{
+
+
+	right: 3%;
+	font-size: 15px;
+	top: 20px;
+}
+.mplist{
+
+	
+	padding: 2% 8%;
+	border: 1px solid #1a1919;
+}
+.prohead{
+
+	padding: 0%
+}
+#menubox{
+
+	
+	position: initial;
+}
+header{
+
+
+	height: auto;
+}
+#hide{
+	
+	padding: 2% 7% 0% 7%;
+	background-color: black;
+}
+
+.in{
+	display: inline-block;
+}
+table{
+	border-collapse: collapse;
+}
+.trs{
+
+margin-top: 27px;
+}
+.messages{
+
+	
+	width: 50%;
+	height: auto;
+	left: 20%;
+}
+#id_user_mail{
+
+
+	width: 69%;
+	margin: 12% auto 1% auto;
+}
+#cps{
+
+	width: 71%;
+	margin: 2% 14%;
+}
+.nothing{
+	font-size:25px;
+}
+td{
+	
+	display: block;
+	padding: 1%;
+}
+#loginhead{
+
+font-size: 15px;
+
+
+top: 20px;
+right: 21%;
+}
+#id_more{
+	width:90%;
+	font-size: 17px;
+}
+#edit{
+
+	font-size: 14px;
+	margin: 0% 7%;
+}
+#mainh{
+
+	
+	font-size: 22px;
+	font-family: Open Sans;
+	margin-bottom: 19px;
+}
+#boxadd{
+
+	
+	margin: 5%;
+	font-size: 16px;
+	width: 88%;
+	padding-top: 14%;
+	height: 75px;
+}
+#websitename{
+
+	
+	font-size: 27px;
+	padding: 4% 7% 0% 7%;
+	height: auto;
+}
+
+#pic{
+
+	margin: 10% 24%;
+	width: 54%;
+	height: 32%;
+}
+#profile{
+	font-size: 14px;
+	float: none;
+	margin: auto;
+	padding: 1%;
+	width: 70%;
+	text-align: center;
+}
+#name{
+	font-size: 26px;
+	margin: 2%;
+}
+#your_ques{
+font-size:16px;
+margin: 5%;
+width: auto;
+}
+#countques{
+font-size:41px;
+position: initial;
+margin: 11px;
+}
+#your_answer{
+
+font-size:16px;
+margin: 5%;
+width: auto;	
+}
+#countans{
+font-size:41px;
+position: initial;
+margin: 11px;
+}
+#description{
+	font-size:16px;
+	margin: 4%;
+}

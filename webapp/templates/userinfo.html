@@ -1,0 +1,69 @@
+{% extends "base.html"%}
+{%load static%}
+{%block tcss%}
+<title>PyForums Profiles | {{username.first_name}}  {{username.last_name}}</title>
+<link type="text/css" rel="stylesheet" href={%static "styles/profile.css"%}>
+{%endblock%}
+{%block fadd%}
+<link href="https://fonts.googleapis.com/css?family=Lobster|Source+Sans+Pro:300|Open+Sans:400" rel="stylesheet">
+<meta name="keywords" content="PyForums,forums,Python"/>
+{%endblock%}
+{%block section%} 
+<section>
+{%if person.profilepic%}
+<img id="pic" src="{{name.profilepic.url}}"/>
+{%else%}
+<img id="pic" src={%static "images/profile.png" %}/>
+{%endif%}		
+<div id="profile">
+<p id="name">{{person.euser.first_name}} {{person.euser.last_name}}</p>	
+<p>{{person.euser.email}}</p>
+<p>Joined on  {{person.euser.date_joined}}</p>
+<div id="your_ques">
+<p id="countques">{{user_ques.count}}</p>
+QUESTION
+</div>
+<div id="your_answer">
+<p id="countans">{{user_ans.count}}</p>
+ ANSWER</div>
+ </div>
+ {%if person.description %}
+ <div id="description">
+  {{person.description}} 
+</div>
+ {%else%}
+ {%endif%}
+ <div id="pquestions">
+ 	<p><span class="click" id="quesclick">Questions</span> <span class="click" id="ansclick"> Answers</span></p>
+ 	<div id="queshide">
+<ul >
+   {%for list in user_ques%}
+    <li >
+      <a style="color:#3995e4" href={%url "seeques" list.id  list.slug %}>{{list.header}}  </a>
+      {%if list.updated %}
+         Updated 
+         {{list.dateqtime|timesince}} ago
+         {%else%}
+         Posted 
+         {{list.dateqtime|timesince}} ago
+       {%endif%}
+    </li>
+   {%endfor%}
+</ul>
+</div>
+<div id="anshide">
+<ul>
+   {%for list in user_ans%}
+    <li >
+      <a style="color:#3995e4" href={%url "seeques" list.question.id  list.question.slug %}>{{list.question.header}}  </a><br>{{list.answer|truncatewords:6}}</br>
+      Posted {{list.datentime|timesince}} ago
+    </li>
+   {%endfor%}
+</ul>
+</div>
+</div>
+</section>
+{%endblock%}
+{%block js%}
+<script src={%static "javascript/profile.js"%} ></script>
+{%endblock%}

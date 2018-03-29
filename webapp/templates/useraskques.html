@@ -1,0 +1,52 @@
+{%extends "base.html"%}
+{%load static%}
+{%block tcss%}
+<title>PyForums | Ask Question</title>
+<link type="text/css" rel="stylesheet" href={%static "styles/base.css"%}>
+{%endblock%}
+{%block fadd%}
+<link href="https://fonts.googleapis.com/css?family=Lobster|Lato|Roboto:900|Arimo:700|Open+Sans:400|Montserrat:700" rel="stylesheet">
+<meta name="keywords" content="PyForums,forums,Python"/>
+<meta name="description" content="Ask your questions on PyForums"/>
+{%endblock%}
+{%block header%} 
+<p class="addheader" ><a class="ah" href={%url "usernav" "top"%}>Hot questions</a></p>
+<p class="addheader" ><a class="ah" href={%url "usernav" "new"%}>Latest questions</a></p>
+<p class="addheader"><a class="ap" href={%url "askquestion"%}>Ask question</a></p>
+<p class="addheader" id="hidehead" ><a class="ah" href={%url "all" "aboutus" %}>About</a></p>
+ <p class="addheader" id="hidehead" ><a class="ah"  href={%url "all" "contactus" %}>Contact</a></p>
+<form  id="search"  action={% url "search" %} method="get">
+    {{search.searchinfo}}
+    <input id="submitsearch" type="image" src={%static "images/search.png"%} alt="submit"/>
+</form>
+{%endblock%}
+{%block section%}
+<section>
+<h2 id="h2tagh">ASK YOUR QUESTION</h2>
+<div id="askquestion">
+<form method="post" action={%url "askquestion"%} >
+{%csrf_token%}
+<p id="headertag">Question head (maximum length 60 characters)</p>	
+{{form.user_question}}
+{{form.user_question.errors}}
+<p id="bodytag">Body</p>
+{{form.question_body}}
+{{form.question_body.errors}}
+<p id="codetag">Your code</p>
+{{form.question_code}}
+<input type="submit" value="Post Question"/></form>
+</div>
+<p class="follow">we hope that you do not voilate any <a style="color:steelblue" href={%url  "all" "termsandcondition"%}>term or condition</a> while posting  your question </p>
+</section>
+{%endblock%}
+{%block login%}
+ <a href={%url "logout"%}><p id="loginhead">Logout</p></a>
+{%endblock%}
+{%block signup%}
+<a href={%url "userpage" username.first_name %}>
+  <p id="username" >Profile</p></a>
+{%endblock%}
+{%block js%}
+  <script src={%static "javascript/main.js"%}></script>
+{%endblock%}
+

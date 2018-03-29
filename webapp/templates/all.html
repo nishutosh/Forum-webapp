@@ -1,0 +1,96 @@
+{% extends "base.html"%}
+{%load static%}
+{%block tcss%}
+<title>PyForums| All you need to know</title>
+<link type="text/css" rel="stylesheet" href={%static "styles/base.css"%}>
+<meta name="keywords" content="PyForums,forums,Python"/>
+<style>
+header{
+	display:none;
+}
+footer{
+  display:none;
+}
+section{
+  padding-bottom: 0%;
+}
+
+</style>
+{%endblock%}
+{%block fadd%}
+     <link href="https://fonts.googleapis.com/css?family=Lobster|Lato|Roboto:900|Arimo:700|Open+Sans:400|Montserrat:700|Raleway:900" rel="stylesheet"> 
+     <meta name="keywords" content="PyForums,forums,Python"/>
+     <meta name="description" content="PyForums is a forum site for python beginners or profestionals sharing knowledge and improving knowldege about python"/>
+{%endblock%} 
+{%block section%} 
+<section>
+	
+<div id="about">
+  	<p id="pyabout">PyForums<span style="position:absolute;font-size:36px">&copy</span></p>
+ <p id="alltext">With Pyforums, you can take Web applications from concept to launch in a matter of hours. pyforums takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.<br>pyforums takes security seriously and helps developers avoid many common security mistakes, such as SQL injection, cross-site scripting, cross-site request forgery and clickjacking. Its user authentication system provides a secure way to manage user accounts and passwords.</p>
+</div>
+<div id="contactus">
+  <p  id="contacthead">Contact Us</p>
+  <p class="cdetails">With Pyforums, you can take Web applications from concept to launch in a matter of hours. pyforums takes care of much of the hassle of Web development, so you can focus on writing your </p> 
+  <div class="cdetails">
+ <img class="imgc" src={%static "images/location.png"%}/> <p >New Delhi,India</p></div>
+ <div class="cdetails">
+ <img class="imgc" src={%static "images/mail.png"%}/><p> www.pyforums124@gmail.com</p></div>
+ <div class="cdetails">
+ <img class="imgc" src={%static "images/call.png"%}/>
+  <p  > +91 9212388473</p>
+</div>
+</div>
+
+<div id="termsandcondition">
+  <p id="termsandconditionhead">Terms and privacy policies </p>
+  <ul id="tclist">
+  <li>With Django, you can take Web applications from concept to launch in a </li>
+  <li>matter of hours. Django takes care of much of the hassle of Web development, so you can focus</li>
+  <li>On writing your app without needing to reinvent the wheel. It’s free and open source.</li>
+  <li>With Django, you can take Web applications from concept to launch in a </li>
+  <li>matter of hours. Django takes care of much of the hassle of Web development, so you can focus</li>
+  <li>On writing your app without needing to reinvent the wheel. It’s free and open source.</li>
+</ul>
+</div>
+
+
+
+<div id="report">
+   
+   <img id="bug" src={%static "images/bug.png"%}/>
+   <p >Found A Bug</p>
+    <p id="rep">matter of hours. Django takes care of much of the hassle of Web development, so you can focus<p id="rep" style="margin-botton:18%;color:orange"> pygorums124@gmail.com</p></p>
+</div>
+</section>
+{%endblock%} 
+{%block js%}
+<script type="text/javascript" >
+{% if goto == "termsandcondition"%}
+$(document).ready(function () {
+    $('html, body').animate({
+        scrollTop: $('#termsandcondition').offset().top
+    }, 'slow');
+});
+{% elif goto == "aboutus"%}
+$(document).ready(function () {
+    $('html, body').animate({
+        scrollTop: $('#about').offset().top
+    }, 'slow');
+});
+{% elif goto == "contactus"%}
+$(document).ready(function () {
+    $('html, body').animate({
+        scrollTop: $('#contactus').offset().top
+    }, 'slow');
+});
+{% elif goto == "reportus"%}
+$(document).ready(function () {
+    $('html, body').animate({
+        scrollTop: $('#report').offset().top
+    }, 'slow');
+});
+
+{%endif%}
+</script>
+{%endblock%}

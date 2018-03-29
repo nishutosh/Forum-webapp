@@ -1,0 +1,103 @@
+{% extends "base.html"%}
+{%load static%}
+{%load filters%}
+{%block tcss%}
+<title>PyForums | Search</title>
+<link type="text/css" rel="stylesheet" href={%static "styles/base.css"%}>
+{%endblock%}
+{%block fadd%}
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Lato|Roboto:900|Arimo:700|Open+Sans:400|Montserrat:700" rel="stylesheet">
+  <meta name="keywords" content="PyForums,forums,Python,search,results"/>
+  <meta name="description" content="PyForums,have query ? search it  "/>
+{%endblock%}
+{%block header%}     
+     <p class="addheader" ><a class="ah" href={%url "indexnav"  "top" %}>Hot questions</a></p>  
+     <p class="addheader"><a class="ah"href={%url "indexnav" "new"%}>Latest questions</a></p>
+     <p class="addheader"><a class="ah"href={%url "askquestion"%}>Ask question</a></p>
+     <p class="addheader" id="hidehead" ><a class="ah" href={%url "all" "aboutus" %}>About</a></p>
+     <p class="addheader" id="hidehead" ><a class="ah"  href={%url "all" "contactus" %}>Contact</a></p>
+     <form  id="search" action={% url "search" %} method="get">
+           {{search.searchinfo}}
+          <input id="submitsearch"type="image" src={%static "images/search.png"%} alt="submit"></input>
+     </form>
+{%endblock%}
+{%block section%}
+<section>
+{%if contacts%}
+<p id="searchtag">search results for <span style="color:black">{{srch}}<span></p>
+<div id="list">
+<ul id="queslist" style="margin-top:19px;"> 
+{%for contact in contacts%}
+<li class="lielement">
+            <h3>
+           <a href={%url "seeques" contact.id contact.slug%}><span class="questioncolor">{{ contact.header}}</span> </a>   
+           </h3> 
+      <div class="abox">
+      {%if contact.reply%}
+      <div class="circlet" style="background-color:springgreen;color:white;border:2px solid springgreen">{{contact.reply}} </div>
+      {%else%}
+      <div class="circlet"> {{contact.reply}}</div> 
+      {%endif%}answers</div> 
+       <div class="vbox">
+      <div class="circlet">{{contact.views|viewscut}}</div>
+      views</div>
+      <p class="user">      
+         {%if contact.updated %}
+         Updated 
+         {{contact.dateqtime|timesince}} ago
+         {%else%}
+         Posted 
+         {{contact.dateqtime|timesince}} ago
+         {%endif%} by
+         <strong> <a href={%url "user" contact.user.id  contact.user.first_name %}>{{contact.user.first_name}}  {{contact.user.last_name}}</a>
+         </strong>
+       </p>         
+    </li>
+      {%endfor%}
+</ul>
+<div class="pagination">  
+        {% if previouspage >= 0 %}
+            <a style="color:steelblue"href="{%url "search"%}?&search={{srch}}&page={{ previouspage}}">previous</a>
+        {% endif %}
+        <span class="current">
+            page {{ current }} of {{ totalpages}}
+        </span>
+        {% if current != totalpages %}
+            <a style="color:steelblue"href="{%url "search"%}?&search={{srch}}&page={{page}}">next</a>
+        {% endif %}
+</div>
+</div>
+<div id="hotq">
+     <h3 id="sidebar">TOP DISCUSSIONS</h3>    
+     <ul>
+       {%for hots in list%}
+         <li class="hothome"><a class="hotlink" href={%url "seeques" hots.id hots.slug%}>{{hots.header}}</a></li>
+        {%endfor%}
+      </ul>   
+</div>
+<p id="noans">Could not find your desired answer ? <a style="color:steelblue"href={%url "askquestion"%}> 
+Ask question</a></p>
+{%else%}
+<p id="noans">Sorry could not find any question related  ? <a style="color:steelblue"href={%url "askquestion"%}> 
+Ask question</a></p>
+{%endif%}
+</section>
+{%endblock%}
+{%block login%}
+{%if username.is_authenticated %}
+ <a href={%url "logout"%}><p id="loginhead">Logout</p></a>
+{%else%}
+<a href={%url "login" "new"%} ><p id="loginhead">Login</p></a>
+{%endif%}
+{%endblock%}
+{%block signup%}
+{%if username.is_authenticated %}
+  <a href={%url "userpage" username.first_name %}>
+  <p id="username" >Profile </p></a>
+{%else%}
+<a href={%url "signup" "new"%}><p id="registerhead" >Signup</p></a>
+{%endif%}
+{%endblock%}
+{%block js%}
+  <script src={%static "javascript/main.js"%}></script>
+{%endblock%}

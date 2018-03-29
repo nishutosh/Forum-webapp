@@ -1,0 +1,86 @@
+{% extends "base.html"%}
+{%load filters%}
+{%load static%}
+{%block tcss%}
+<title>PyForums | Userhome</title>
+<link type="text/css" rel="stylesheet" href={%static "styles/base.css"%}>
+{%endblock%}
+{%block fadd%}
+<link href="https://fonts.googleapis.com/css?family=Lobster|Lato|Roboto:900|Arimo:700|Open+Sans:400|Montserrat:700" rel="stylesheet">
+<meta name="keywords" content="PyForums,forums,Python"/>
+{%endblock%}
+{%block header%} 
+<p class="addheader" ><a class="ah" href={%url "usernav" "top"%}>Hot questions</a></p>
+<p class="addheader" ><a class="ah" href={%url "usernav" "new"%}>Latest questions</a></p>
+<p class="addheader"><a class="ah" href={%url "askquestion"%}>Ask question</a></p>
+<p class="addheader" id="hidehead" ><a class="ah" href={%url "all" "aboutus" %}>About</a></p>
+<p class="addheader" id="hidehead" ><a class="ah"  href={%url "all" "contactus" %}>Contact</a></p>
+<form  id="search"  action={% url "search" %} method="get">
+     {{search.searchinfo}}
+    <input id="submitsearch" type="image" src={%static "images/search.png"%} alt="submit"/>
+</form>
+{%endblock%}
+{%block nav%}
+<div id="nav">
+     <p id="title">Welcome , {{username.first_name}} {{username.last_name}}</p> 
+</div>
+{%endblock%}
+{%block section%}
+<section>
+  <div id="list">
+   <ul id="queslist">
+   {% for contact in contacts %}
+    <li class="lielement">
+      <h3>
+      <a href={%url "seeques" useeques=contact.id   slugtext=contact.slug %}>{{ contact.header}}</a> 
+      </h3> 
+       <div class="abox">
+      {%if contact.reply%}
+      <div class="circlet" style="background-color:springgreen;color:white;border:2px solid springgreen">{{contact.reply}} </div>
+      {%else%}
+      <div class="circlet"> {{contact.reply}}</div> 
+      {%endif%}answers</div> 
+       <div class="vbox">
+      <div class="circlet">{{contact.views|viewscut}}</div>
+      views</div>
+      <p class="user">   
+          {%if contact.updated %}
+          Updated 
+          {{contact.dateqtime|timesince}} ago
+          {%else%}
+          Posted 
+          {{contact.dateqtime|timesince}} ago
+          {%endif%}
+          <strong>by <a href={%url "user" contact.user.id  contact.user.first_name %} >
+          {{contact.user.first_name}} {{contact.user.last_name}} </a>
+          </strong>
+      </p>
+    </li>
+    {%endfor%}
+   </ul>
+   <p id="more">
+   <a class="hotlink" href={%url "usernav"  "new"%}>More Questions</a>
+   </p>
+  </div>
+  <div id="hotq">
+     <h3>RECENT THREADS</h3>    
+     <ul>
+       {%for hots in hotlist%}
+         <li class="hothome"><a class="hotlink" href={%url "seeques" hots.id hots.slug%}>{{hots.header}}</a></li>
+        {%endfor%}
+      </ul>   
+   </div>
+   
+   </section>
+{%endblock%}
+{%block login%}
+ <a href={%url "logout"%}><p id="loginhead">Logout</p></a>
+{%endblock%}
+{%block signup%}
+<a href={%url "userpage" username.first_name %}>
+  <p id="username" >Profile </p></a>
+{%endblock%}
+{%block js%}
+  <script src={%static "javascript/main.js"%}></script>
+{%endblock%}
+

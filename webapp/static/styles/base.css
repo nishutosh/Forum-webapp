@@ -1,0 +1,897 @@
+@font-face{
+	font-family:hfont;
+    src:url(../fonts/hfont.ttf) ;
+}
+@font-face{
+	font-family:name;
+    src:url(../fonts/name.otf) ;
+}
+
+@font-face{
+	font-family:social;
+    src:url(../fonts/social.otf) ;
+}
+
+#container{
+	min-height:100%;
+   position:relative;
+}
+*{ 
+	margin:0px;
+	padding:0px;
+}
+section{
+	padding-bottom:22%;
+}
+body{height:100%;
+	background-color:white;
+}	
+li{
+	list-style-type:none;
+}
+header{
+	font-family:hfont,Verdana;
+	height: 34px;
+	color: black;
+	text-align: left;
+	padding: 108px 0px 13px 15px;
+	background-image: url("../images/header.jpg");
+	 }
+ #websitename{ 
+    font-size:45px;   
+    font-family: 'Lobster', Verdana;
+    position: absolute;
+    top: 22px;
+    left: 40px;
+    color: white;
+}
+.qsocial{
+    position:relative;
+	left:163px;
+	top:-42px;
+ 	font-family:social;
+	font-size:54px;
+	color: black;
+
+}
+
+.ah{
+	color:white;
+}
+.ap{
+	color:orange;
+}
+
+.addheader{	
+    display:inline-block;
+    margin-left:30px;	
+    font-size:19px;
+    font-family: 'Open Sans', sans-serif;
+    color:white;
+}
+#userhead{
+	position:absolute;
+	top:10px;
+	right:90px;
+	font-size: 17px;
+	font-family: Verdana;
+}
+#registerhead{
+	font-family:name,Verdana;	
+	top:16px;
+	right:83px;
+	font-size:15px;  
+	color:white;
+	position: absolute;
+	background-color: springgreen;
+	padding: 10px;
+	border-radius: 3px;
+}
+#loginhead{ 
+	font-family:name,Verdana;
+	position:absolute;
+	top:26px;
+	right:27px;
+	font-size:15px;
+	color:white;
+	}
+#nav{
+	display: none;
+	background-repeat: no-repeat;
+	background-size: 100% ;
+	height: 39px;
+	padding: 37px 40px 40px 45px;	
+	background-color: #202020;
+}
+#title{
+	display:inline-block;
+	font-family:Open Sans,Verdana;
+	font-size:21px;
+	color: orange;
+}
+#search{	
+	position: absolute;
+	right:174px;
+	top:16px;	
+}
+#id_searchinfo{
+	width:82%;
+	padding:4px;
+	height:28px;
+    border-radius: 5px;
+
+	
+		
+	font-family: Open Sans,Verdana;
+	font-size: 15px;
+	border: 1px solid #0e0e0e;
+	padding-right: 15%;
+	display: none;
+	box-shadow: none;
+}
+#submitsearch{
+    position:absolute;
+	top:7px;
+	right:6px;
+}
+.hothome{	
+	margin-top:9px;
+	font-size:16px;
+	
+}
+#searchtag{
+margin:20px 10px -10px 32px;
+font-size:20px;
+font-family:Open Sans;
+color:grey;
+}
+.errorlist{
+
+	margin-bottom: 2%;
+	color:tomato;
+	font-family: Open Sans;
+	margin-left:2%;
+}
+.hotlink{
+	color:steelblue;
+}
+#hotq{
+	overflow:hidden;
+	text-overflow:ellipsis;
+   font-family: 'Roboto', sans-serif;
+	font-size:15px;
+	width:321px;	
+	padding: 34px 14px 32px 33px;
+ 
+	float: right;
+}
+#queslist{
+	font-family: Verdana
+}
+.lielement{
+	padding:30px 4px 20px 0px;	
+	margin-bottom:-2px;
+	height:90px;
+	border-bottom: 1px solid darkgray;
+	margin-left: 47px;
+}
+
+.circlet{
+	font-size:18px;
+	border:2px solid #b1b1b1;
+	color:#575757;
+	height:34px;
+	padding:15px 5px 5px 5px;
+	text-align:center;
+	width:44px;
+	border-radius: 100%;
+	margin: 6px;
+	
+}
+.socialnettag{
+
+color:white;
+font-family:social;
+font-size:69px;
+
+margin: 10px;
+}
+
+#sidebar{
+	display:inline-block;
+    max-width:580px;
+    word-wrap:break-word;
+	font-family: 'Arimo', sans-serif;
+	color: black;
+	font-size:21px;
+
+
+}
+h3{
+	display:inline-block;
+    max-width:580px;
+    word-wrap:break-word;
+	font-family: 'Montserrat', sans-serif;
+	color: black;
+	font-size:20px;
+}
+#list{
+display:inline-block;
+width:69%;
+
+}
+
+#more{
+	font-family:Verdana;
+	color:steelblue;
+	margin-top:13px;	
+	text-align: center;
+}
+.pagination{
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	margin: 2%;
+}
+h3>a{
+	color:#353535;
+}
+
+#h2tagh{
+     font-family: 'Lato', sans-serif;
+    margin:39px 30px 0px 30px;
+    font-size: 22px;
+    color: #fe8831;
+  
+}
+#alltext{
+
+	color: #626262;
+	font-family: Open Sans,Verdana;
+	font-size: 17px;
+	margin: 4%;
+	text-align: left;
+}
+#registerhead:hover{
+
+	background-color: #23ce66;
+}
+#contactus{
+
+	
+	padding: 9%;
+	background-color: #18d8a2;
+}
+#contacthead{
+
+	
+	font-size: 54px;
+	font-family: Open Sans,Verdana;
+	color: white;
+}
+
+
+
+.cdetails{
+
+	
+	font-size: 19px;
+	font-family: Open Sans;
+	margin: 4% 7% 3% 7%;
+	display: inline-block;
+	color: white;
+	text-align: center;
+}
+.imgc{
+	margin-bottom: 4%;
+}
+#termsandcondition{
+
+	
+	padding: 10% 6%;
+	background-color: #4d4d4d;
+	color: #8f8f8f;
+}
+#rep{
+    font-size:18px;
+
+
+}
+#report{
+
+	
+	background-color: purple;
+	padding: 12%;
+	font-family: Open Sans,Verdana;
+	color: white;
+	font-size: 33px;
+	text-align: center;
+}
+#tclist{
+
+	color:white;
+	font-size:18px;
+	font-family:Open Sans,Verdana;
+
+}
+#termsandconditionhead{
+
+
+	
+	font-size: 33px;
+	font-family: Verdana;
+	margin-bottom: 4%;
+}
+
+
+#views{
+	color:black;
+	border:1px solid black;
+	border-radius:3px;
+	float:right;
+	padding:2px 5px 2px 5px;
+	font-family: Open Sans,Verdana;
+}
+.user{
+	color:#636262;
+	margin-top:24px;
+   font-size:14px;
+   margin-bottom: 10px;
+}
+#question{
+	font-size:22px;
+	color:black;
+	margin-bottom: 8px;
+	font-family: Verdana;
+}
+#quesbox{
+	padding:14px 0px;
+	font-family:Open Sans,Verdana;
+	color: #333333;
+	font-size: 17px;
+	margin: 8px 43px;
+}
+#code{
+	font-family:Verdana;
+	font-size:15px;
+    margin-top:15px;
+    background-color:#99b3ff;
+    padding: 4px;
+	overflow: scroll;
+	width: 100%;
+	max-height: 250px;
+}
+#answer{
+	margin:30px 0px 12px 0px;
+    font-size: 18px;
+}
+.box{
+	padding: 7px;
+	border-radius:2px;
+	font-size:18px;
+	color:steelblue;
+
+}
+li.ans{
+	font-family: Open Sans,Verdana;
+	font-size:17px;
+	padding: 0px;
+	border-bottom:1px solid #666666;
+	padding-top: 18px;
+	padding-bottom: 20px;
+	margin: 0px 43px;
+}
+#comment{
+	font-family:Open Sans,Verdana;
+	font-size:22px;
+	color: grey;
+	text-align: center;
+}
+#noans{
+
+
+	font-size: 18px;
+	font-family: Open Sans,Verdana;
+	margin: 4% 0% 0% 3.5%;
+}
+
+#pyabout{
+
+	font-family:"Lobster",Verdana;
+	color:snow;
+	font-size: 92px;
+	margin:auto;
+}
+#about{
+
+	background-color:#121212;
+	padding: 6%;
+	text-align: center;
+	padding-bottom: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+li.foot{
+	list-style-type:none;
+	margin:20px;
+    display:inline-block;
+	text-align: center;
+	width: 173px;
+	}
+
+
+footer{
+	position: absolute;
+	width:100%;
+	bottom:0px;
+	font-size:15px;
+	padding:9px 0px;
+	margin-top:28px;
+	color:white;
+	font-family: Open Sans,Verdana;
+	background-color:black;
+
+	text-align: center;
+}
+
+a{
+	text-decoration:none;
+    outline:none;
+	color: #f87d30;
+}
+header>a{
+	color:black;	
+}
+
+
+
+
+
+#askquestion{
+font-size:19px;
+	color:black;
+	margin-bottom: 11px;
+	
+}
+
+#codetag{
+   padding:10px 30px 10px 27px;
+   font-family:Verdana;
+
+  
+}
+#headertag{
+	padding:20px 30px 10px 29px;
+
+	font-family: Verdana;
+}
+#id_user_question{
+	outline:none;
+	width:665px;
+	height:35px;
+	margin-left: 30px;
+	padding: 10px;
+	font-size: 18px;
+	border-radius: 3px;
+	border: 1px solid #0dcfd7;
+}
+#bodytag{
+	padding:10px 30px 10px 28px;
+	font-family: Verdana;
+}
+#id_question_body{
+	resize:none;
+	box-shadow: none;
+	outline:none;
+    width:74%;
+	margin-left: 28px;
+	padding: 10px;
+	border-radius: 3px;
+    font-size: 14px;
+    font-family: Verdana;
+    border: 1px solid #0dcfd7;
+	height: 241px;
+}
+
+#id_question_code{
+	resize:none;
+    outline:none;
+	width:75%;
+	margin-left: 28px;
+    border: 1px solid #0dcfd7;
+	font-size: 14px;
+	padding: 5px 2px 5px 2px;
+}
+.follow{
+	margin: 1% 2% 0% 2%;
+	font-family: Verdana;
+	font-size: 15px;
+}
+input[type="submit"]{
+
+	width:193px;
+	
+	height: 40px;
+	font-size: 22px;
+	background-color: springgreen;
+	border: none;
+	color: white;
+	display: block;
+	margin: 10px 27px;
+}
+input[type="submit"]:hover{
+   background-color: #03db6e;
+
+}
+
+#id_answer{
+
+	box-shadow: none;
+	outline:none;
+    width:97%;
+	margin-left: 0px;
+	padding: 10px;
+	border-radius: 2px;
+    font-size: 14px;
+    font-family: Verdana;
+    border: 1px solid #16e6de;
+	height: 210px;
+	resize: none;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+#id_answer_code{
+    resize:none;
+    outline:none;
+	width:98%;
+    border: 1px solid #07e5ed;
+	font-size: 14px;
+	padding: 5px 2px 5px 2px;
+
+    margin-top: 5px;
+}
+.abox{
+
+	color:#535151;
+
+	text-align: center;
+	float: right;
+}
+.vbox{
+
+	color:#535151;
+	text-align: center;
+	float: right;
+	margin-right: 2%;
+}
+.usera{
+	font-family:Open Sans,Verdana;
+}
+
+
+
+#ask_tag{
+	background-color: springgreen;
+	width: 201px;
+    border-radius:100%;
+	height: 194px;
+	margin: 0px auto 20px auto;
+}
+
+#username_tag{
+ font-family:Verdana;
+ font-size:23px;
+
+}
+#username{
+	font-family:name,Verdana;
+	position:absolute;
+	top:26px;
+	right:102px;
+	font-size:17px;
+	color:#1980d5;
+
+}
+#bodyques{
+	overflow:hidden;
+     text-overflow: ellipsis;
+	width:100%;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:575px){
+#quesbox{
+
+ 	margin:7% 8% 0% 7%;
+ 	padding: 0%;
+ }
+ #pyabout{
+ 	font-size:53px;
+ }
+#search{
+
+position: initial;
+
+height: 40px;
+}
+#id_searchinfo{
+	display:block;
+	padding: 4px;
+	padding-left: 14%;
+	margin: 1%;
+	font-size: 14px;
+	margin-top: 4%;
+}
+ .circlet{
+	font-size:12px;
+	border:2px solid #b1b1b1;
+	color:#575757;
+	height:21px;
+	padding:3px;
+	width:28px;
+	padding-top:10px;
+	
+	margin: auto;
+}
+h2>a{
+	font-size: 20px;
+}
+#searchtag{
+	margin:6%;
+	font-size:17px;
+	margin-bottom: 0%;
+}
+#h2tagh{
+     font-family: 'Lato', sans-serif;
+    margin:4%;
+    font-size: 18px;
+    color: #fe8831;
+  
+     margin-bottom: 0%;
+}
+.follow{
+	margin: 1% 2% 0% 2%;
+	font-family: Verdana;
+	font-size: 15px;
+}
+#username{
+
+	font-family:Open Sans,Verdana;
+	position:absolute;
+	top:21px;
+	font-size:16px;
+	color:#1980d5;
+
+	right: 5%;
+}
+.vbox{
+
+	float: none;
+	font-size: 13px;
+	
+	display: inline-block;
+	margin-left: 3%;
+}
+.abox{
+    float: none;
+	font-size: 13px;
+	display: inline-block;
+
+
+    margin-top: 13px;
+}
+ #bug{
+
+ 	width:20%;
+ 	height:20%;
+ }
+ #rep{
+ 	font-size:15px;
+ }
+ #contacthead{
+ 	font-size:47px;
+ 	text-align: center;
+ }
+ .cdetails{
+ 	font-size:16px;
+ 	display:block;
+ 	margin-top:15%;
+ }
+#views{
+	display: none;
+}
+#question{
+	font-size: 19px;
+}
+#bodyques{
+	font-size: 16px;
+}
+
+input[type="submit"]
+{
+
+	width:40%;
+	margin: 2% auto;
+}
+#id_answer{
+	width:94%;
+}
+#comment{
+	font-size: 17px;
+	background-color: white;
+	padding: 0%;
+	margin: 1% 7%;
+	color: #595757;
+}
+#answer{
+	font-size:15px;
+}
+li.ans{
+	margin: 10% 7%;
+	padding: 0%;
+}
+.addheader{	
+
+    font-size: 11px;
+    width: 32%;
+    text-align: center;
+    margin: 0px;
+    font-family: Verdana;
+}
+#hotq{
+	display:none;
+}
+header{
+	padding: 0%;
+	padding-top: 21%;
+	height: initial;
+	padding-bottom: 0%;
+	background-image: url("../images/headersmall.jpg");
+}
+#websitename{
+	top:10px;
+	left:6%;
+	font-size: 30px;
+}
+#registerhead{
+	top:18px;
+	padding: 2%;
+	font-size: 12px;
+	right: 3%;
+}
+#submitsearch{
+	position: relative;
+	left: 4%;
+	top: -34px;
+}
+#loginhead{
+	top:21px;
+
+	right: 24%;
+	font-size: 15px;
+	font-family: Open Sans ,Verdana;
+}
+#nav{
+	display: none;
+	height: auto;
+	padding: 6%;
+}
+.lielement{
+	padding:0%;
+
+	height: auto;
+	margin: 7% 7%;
+}
+#list{
+	width:100%;
+	margin-top:0%;
+}
+h3>a{
+	font-size:19px;
+}
+#hidehead{
+
+display:none;
+
+}
+
+
+
+
+h3{
+	display:block;
+}
+
+.user{
+	font-size:13px;
+	margin-top: 17px;
+}
+
+li.foot{
+	margin:2% auto;
+	display: block;
+}
+footer{
+	position:initial;
+	font-size: 13px;
+}
+section{
+	padding-bottom: 0%;
+}
+.socialnettag{
+	font-size:52px;
+}
+#more{
+	font-size: 16px;
+}
+
+.pagination{
+
+}
+
+
+
+#headertag{
+
+	font-size: 17px;
+}
+#id_user_question{
+	font-size: 15px;
+	width: 80%;
+	padding: 2%;
+	height: 10%;
+}
+#bodytag{
+
+	font-size:17px;
+
+}
+#id_question_body{
+    font-size: 15px;
+	width: 80%;
+	padding: 2%;
+
+
+}
+#codetag{
+	font-size:17px;
+}
+#id_question_code{
+    font-size: 15px;
+	width: 80%;
+	padding: 2%;
+
+}
+
+
+
+
+
+
+
+
+
+}
+@media screen and (max-width:445px) and (min-width: 350px){
+.addheader{
+	font-size:12px;
+}
+
+}

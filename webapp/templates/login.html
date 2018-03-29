@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{%block tcss%}
+    <title>Pyforums | Login </title>
+    <link type="text/css" rel="stylesheet" href={%static "styles/signin.css"%}>
+{%endblock%} 
+{%block fadd%}
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Source+Sans+Pro:300|Open+Sans:400" rel="stylesheet">
+        <meta name="description" content="PyForums login page">
+        <meta name="keywords" content="PyForums,login page">
+{%endblock%}
+{%block section%}
+<section>
+  {% if messages %}
+  <ul class="messages">
+  {% for message in messages %}
+  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+  {% endfor %}
+  </ul>
+  {% endif %}
+  <div id="loginbox">
+    <p id="boxtag">Login to PyForums</p>
+    <form action={%url "login" alink%} method="post" >
+	    {%csrf_token%}
+      {{form.user_name}}
+      {{form.user_name.errors}}
+      {{form.login_password}}
+	    {{form.login_password.errors}}
+	     <p style="font-size:20px;color:tomato;">{{message}}</p>
+      <input type="submit" value="Log in" id="submit"/>
+    </form>
+    <span id="py">Don't have an account yet ? <a href={%url "signup" "new"%} id="dhac" >SignUp</a></span>
+  </div>
+</section> 
+{%endblock%}

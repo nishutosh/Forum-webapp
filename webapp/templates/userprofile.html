@@ -1,0 +1,84 @@
+{% extends "base.html"%}
+{%load static%}
+{%block tcss%}
+<title>PyForums Profiles | {{username.first_name}}  {{username.last_name}}</title>
+<link type="text/css" rel="stylesheet" href={%static "styles/profile.css"%}>
+{%endblock%}
+{%block fadd%}
+<link href="https://fonts.googleapis.com/css?family=Lobster|Source+Sans+Pro:300|Open+Sans:400" rel="stylesheet">
+<meta name="keywords" content="PyForums,forums,Python"/>
+{%endblock%}
+{%block header%}
+  <div id="menubox">
+  <ul>
+    <li id="hide" ><img id="navi" class="prohead"src='{%static "images/nav.png"%}' alt="Menu" /></li>
+    <li id="mp" class="prohead">Manage Profile <img src={%static "images/down.png"%}/></li>
+    <a href={%url "userpage" username.first_name %}><li class="mplist">My Profile</li></a>
+    <a href={%url "aboutyoutext"%}><li class="mplist">About You</li></a>
+    <a href={%url "userquestions"%}><li class="mplist"> Your Questions</li></a>
+    <a href={%url "useranswers"%}><li class="mplist">Your Answers</li></a>
+    <a href={%url "changeemail"%}><li class="mplist">Change Email Id</li></a>
+    <a href={%url "changepassword"%}><li class="mplist">Change Password</li></a>
+    <a href={%url "picupload"%}><li class="mplist">Upload Profile Pic</li></a>
+    <a href={%url "deleteprofile"%}><li class="mplist">Delete Profile</li></a>
+  </ul>
+</div>
+
+  <div id="menubox1">
+  <ul>
+    <li id="mo" class="prohead">More <img src={%static "images/down.png"%}/></li>
+    <a href={%url "all" "aboutus"%}><li class="mplist1">About Us</li></a>
+    <a href={%url "all" "contactus"%}><li class="mplist1"> Contact Us</li></a>    
+  </ul>
+</div>
+{%endblock%}
+{%block section%} 
+<section>	
+<a title="Change Profile Pic" href={%url "picupload"%}>{%if name.profilepic%}
+<img id="pic" src="{{name.profilepic.url}}"/>
+{%else%}
+<img id="pic" src={%static "images/profile.png" %}/>
+{%endif%}</a>		
+<div id="profile">
+<p id="name">{{username.first_name}} {{username.last_name}}</p>	
+<p>Username {{username.username}}  </p>
+<p>{{username.email}}</p>
+<p>Joined on  {{username.date_joined}}</p>
+<div id="your_ques">
+<p id="countques">{{count_ques}}</p>
+QUESTION
+</div>
+<div id="your_answer">
+<p id="countans">{{count_ans}}</p>
+ ANSWER</div>
+ </div>
+ {%if name.description %}
+ <div id="description">
+  {{name.description}} 
+</div>
+<a id="edit" href={%url "aboutyoutext"%}>
+ edit that?</a>
+ {%else%}
+<div id="boxadd"><a id="tmay" href={%url "aboutyoutext"%}>
+Tell us more about yourself ?  </a></div>
+ {%endif%}
+{% if messages %}
+<ul class="messages">
+  <img src={%static "images/green_tick.png"%}/>
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+</section>
+{%endblock%}
+{%block signup%}
+<a href={%url "usernav"  "new"%}>
+  <p id="username"  >Home</p></a>
+{%endblock%}
+{%block login%}
+ <a href={%url "logout"%}><p id="loginhead">Logout</p></a>
+{%endblock%}
+{%block js%}
+<script src={%static "javascript/profile.js"%} ></script>
+{%endblock%}

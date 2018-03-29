@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{%block tcss%}
+      <title>Pyforums | SignUp </title>
+      <link type="text/css" rel="stylesheet" href={%static "styles/signin.css"%}>
+{%endblock%}  
+{%block fadd%}
+      <link href="https://fonts.googleapis.com/css?family=Lobster|Source+Sans+Pro:300|Open+Sans:400" rel="stylesheet">    
+      <meta name="description" content="PyForums Signup page">
+      <meta name="keywords" content="PyForums,Signup page">
+{%endblock%} 
+{%block section%}
+<section>
+  <div id="signbox">
+    <p id="boxtag">Signup to  PyForums</p>
+    <form id="sform"action={% url "signup" ques%} method="post" >
+         {%csrf_token%}
+         {{form.username}}<span class="error">{{form.username.errors}}{{name}}</span>
+         {{form.first_name}}<span class="error">{{form.first_name.errors}}</span>
+         {{form.last_name}}<span class="error">{{form.last_name.errors}}</span>
+         {{form.password}}<p style="display:none ;font-size:15px;font-family:Verdana" id="see">password minimum 8 char</p><span class="error">{{form.password.errors}}{{valid}}</span>
+         {{form.confirm_password}}<span class="error">{{form.confirm_password.errors}}{{nomatch}}</span>
+         {{form.email}}<span class="error">{{form.email.errors}}</span>
+         <input type="submit" value="SignUp" id="submit"></input>
+         <p id="agree">By registering,you agree to </p>
+         <p id="agree"><a href={%url "all" "termsandcondition" %}>privacy policy and terms and conditions</a></p>
+    </form>
+    <p id="or">Or</p>
+    <a href={%url "login" "new"%} ><p id="floa">Login</p></a>
+ </div>
+</section>
+{%endblock%}

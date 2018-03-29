@@ -1,0 +1,68 @@
+{% extends "base.html"%}
+{%load static%}
+{%block tcss%}
+<title>PyForums | Answer</title>
+<link type="text/css" rel="stylesheet" href={%static "styles/base.css"%}>
+{%endblock%}
+{%block fadd%}
+<link href="https://fonts.googleapis.com/css?family=Lobster|Lato|Roboto:900|Arimo:700|Open+Sans:400|Montserrat:700" rel="stylesheet">
+<meta name="keywords" content="PyForums,forums,Python"/>
+{%endblock%}
+{%block header%}
+<p class="addheader" ><a class="ah" href={%url "usernav" "top"%}>Hot questions</a></p>
+<p class="addheader" ><a class="ah" href={%url "usernav" "new"%}>Latest questions</a></p>
+<p class="addheader"><a class="ah" href={%url "askquestion"%}>Ask question</a></p>
+<p class="addheader" id="hidehead" ><a class="ah" href={%url "all" "aboutus" %}>About</a></p>
+<p class="addheader" id="hidehead" ><a class="ah"  href={%url "all" "contactus" %}>Contact</a></p>
+<form  id="search" action={% url "search" %} method="get">
+           {{search.searchinfo}}
+          <input id="submitsearch" type="image" src={%static "images/search.png"%} alt="submit"/>
+</form> 
+{%endblock%}
+{%block section%}
+<section>
+<h2 id="h2tagh">ANSWER QUESTION</h2>
+<div id="quesbox">
+       {%if question.views > 1000 %}
+       <p id="views">{{question.views|get_digit:"54"}}k VIEWS</p>
+      {%elif question.views > 100000 %}
+      <p id="views"> {{question.views|get_digit:"76"}}l VIEWS</p>
+      {%else%}
+      <p id="views"> {{question.views}} VIEWS</p>
+      {%endif%}
+      <p id="question">{{ question.header}}</p> 
+      <p> {{ question.body|linebreaks}}</p>
+      {%if question.ucode%}
+      <div id="code"> 
+      	<pre>{{ question.ucode|linebreaks}}</pre>
+      </div>
+      {%endif%}
+      <div class="user">Posted By:{{question.user.first_name}} {{question.user.last_name}}  {{question.dateqtime|timesince}} ago</div>
+<p>ANSWER</p>
+<form method="post" action={%url "postanswer" question.id%}>
+{%csrf_token%}
+{{form.answer}}
+{{form.answer.errors}}
+<p>Code</p>
+{{form.answer_code}}
+{{form.answer_code.errors}}
+<input style="margin-left:0px" type="submit" value="ANSWER"/></form>
+</div>
+</section>
+{%endblock%}
+{%block login%} 
+<a href={%url "logout"%}><p id="loginhead">Logout</p></a>
+{%endblock%}
+{%block question%}
+<a href={%url "usernav"   "new"%} <ul>Question</ul></a>
+{%endblock%}
+{%block signup%}
+<a href={%url "userpage" username.first_name %}>
+  <p id="username" >Profile</p></a>
+{%endblock%}
+{% block askquestion%}
+ <a href={%url "askquestion"%}> <ul>Ask Question</ul></a>
+ {%endblock%}
+{%block js%}
+  <script src={%static "javascript/main.js"%}></script>
+{%endblock%}

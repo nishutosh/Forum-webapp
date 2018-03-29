@@ -1,0 +1,60 @@
+{% extends "base.html"%}
+{%load static%}
+{%block tcss%}
+<title>PyForums Profiles | {{username.first_name}}  {{username.last_name}}</title>
+<link type="text/css" rel="stylesheet" href={%static "styles/profile.css"%}>
+{%endblock%}
+{%block fadd%}
+<link href="https://fonts.googleapis.com/css?family=Lobster|Source+Sans+Pro:300|Open+Sans:400" rel="stylesheet">
+<meta name="keywords" content="PyForums,forums,Python"/>
+{%endblock%}
+{%block header%}
+<div id="menubox">
+  <ul>
+    <li id="hide" ><img id="navi" class="prohead"src='{%static "images/nav.png"%}' alt="Menu" /></li>
+    <li id="mp" class="prohead">Manage Profile <img src={%static "images/down.png"%}/></li>
+    <a href={%url "userpage" username.first_name %}><li class="mplist">My Profile</li></a>
+    <a href={%url "aboutyoutext"%}><li class="mplist">About You</li></a>
+    <a href={%url "userquestions"%}><li class="mplist"> Your Questions</li></a>
+    <a href={%url "useranswers"%}><li class="mplist">Your Answers</li></a>
+    <a href={%url "changeemail"%}><li class="mplist">Change Email Id</li></a>
+    <a href={%url "changepassword"%}><li class="mplist">Change Password</li></a>
+    <a href={%url "picupload"%}><li class="mplist">Upload Profile Pic</li></a>
+    <a href={%url "deleteprofile"%}><li class="mplist">Delete Profile</li></a>
+  </ul>
+</div>
+
+  <div id="menubox1">
+  <ul>
+    <li id="mo" class="prohead">More <img src={%static "images/down.png"%}/></li>
+    <a href={%url "all" "aboutus"%}><li class="mplist1">About Us</li></a>
+    <a href={%url "all" "contactus"%}><li class="mplist1"> Contact Us</li></a>    
+  </ul>
+</div>
+{%endblock%}
+{%block section%}
+<section> 
+<form action={%url "editques" questions.id%} method="post">
+{%csrf_token%}
+<p id="headertag">Question head (maximum length 60 characters)</p>	
+{{form.user_question}}
+{{form.user_question.errors}}
+<p id="bodytag">Body</p>
+{{form.question_body}}
+{{form.question_body.errors}}
+<p id="codetag">Your code</p>
+{{form.question_code}}
+<input id="cps"  type="submit" value="Update that"></input>
+</form>
+</section>
+{%endblock%}
+{%block signup%}
+<a href={%url "usernav"  "new"%}>
+  <p id="username" style="color:white;" >Home</p></a>
+{%endblock%}
+{%block login%}
+ <a href={%url "logout"%}><p id="loginhead">Logout</p></a>
+{%endblock%}
+{%block js%}
+<script src={%static "javascript/profile.js"%} ></script>
+{%endblock%}

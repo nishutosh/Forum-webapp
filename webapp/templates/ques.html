@@ -1,0 +1,68 @@
+{% extends "base.html"%}
+{%load filters%}
+{%load static%}
+{%block tcss%}
+<title>{{headers.header}} - PyForums</title>
+<link type="text/css" rel="stylesheet" href={%static "styles/base.css"%}>
+{%endblock%}
+{%block fadd%}
+<link href="https://fonts.googleapis.com/css?family=Lobster|Lato|Roboto:900|Arimo:700|Open+Sans:400|Montserrat:700" rel="stylesheet"> 
+<meta name="keywords" content="PyForums,forums,Python,hot ,questions,{{headers.header}}"/>
+<meta name="description" content="{{headers.header}} - PyForums"/>
+{%endblock%}
+{%block header%} 
+   <p class="addheader" ><a class="ah" href={%url "indexnav"  "top" %}>Hot questions</a></p>  
+     <p class="addheader"><a class="ah" href={%url "indexnav" "new"%}>Latest questions</a></p>
+     <p class="addheader"><a class="ah" href={%url "askquestion"%}>Ask question</a></p>
+      <p class="addheader" id="hidehead" ><a class="ah" href={%url "all" "aboutus" %}>About</a></p>
+     <p class="addheader" id="hidehead" ><a class="ah"  href={%url "all" "contactus" %}>Contact</a></p>
+     <form  id="search" action={% url "search" %} method="get">
+           {{search.searchinfo}}
+          <input id="submitsearch" type="image" src={%static "images/search.png"%} alt="submit"/>
+     </form> 
+{%endblock%}
+{%block section%}
+<section>
+<div id="quesbox">
+       
+       <p id="views">{{headers.views|viewscut}} VIEWS</p>
+      <p id="question">{{ headers.header}}</p> 
+      <div id="bodyques"> {{ headers.body|linebreaks}}</div>
+      {%if headers.ucode%}
+      <div id="code"> 
+      	<pre>{{ headers.ucode|linebreaks}}</pre>
+      </div>
+      {%endif%}
+      <div class="user">Posted By  <a href={%url "user" headers.user.id  headers.user.first_name %} >{{headers.user.first_name}} {{headers.user.last_name}} </a> {{headers.dateqtime|timesince}} ago</div>
+      <p id="answer">
+       want to answer this question?	<a  class="box" href={%url "login" headers.id%}> Login</a>  or <a class="box" href={%url "signup" headers.id%}> SignUp </a> </p> 
+       <p >share this question</p>
+       <a class="qsocial" href="https://twitter.com/intent/tweet?url={{link}}&text={{headers.header}}">t</a>
+       <a  class="qsocial" href="https://www.facebook.com/sharer/sharer.php?u={{link}}">f</a>
+       <div id="comment"> {{headers.reply}} Replies</div>
+  </div> 
+  <ul >
+	  {%for answers in list%}	
+       <li class="ans">
+       	  <p>{{ answers.answer|linebreaks}}
+       	  	{%if  answers.acode %}
+       	  	<div id="code" style="background-color:">
+       	      <pre>{{ answers.acode|linebreaks}}</pre> 
+       	    </div>
+       	    {%endif%}  
+          </p>  
+          <div class="user">Comment By  <a href={%url "user" answers.userans.id  answers.userans.first_name %} >{{answers.userans.first_name}}  {{answers.userans.last_name}}</a>  {{answers.datentime|timesince}} ago   </div>
+       </li> 
+	  {%endfor%}
+  </ul>
+</section>    
+{%endblock%}
+{%block login%}
+<a href={%url "login" "new"%} ><p id="loginhead">Login</p></a>
+{%endblock%}
+{%block signup%}
+<a href={%url "signup" "new"%}><p id="registerhead" >Signup</p></a>
+{%endblock%}
+{%block js%}
+  <script src={%static "javascript/main.js"%}></script>
+{%endblock%}
